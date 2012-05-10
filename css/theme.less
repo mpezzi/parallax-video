@@ -1,0 +1,107 @@
+.background-transition {
+  -webkit-transition: background-position 0.1s;
+     -moz-transition: background-position 0.1s;
+       -o-transition: background-position 0.1s;
+          transition: background-position 0.1s;
+}
+
+.rounded-corners (@radius: 5px) {
+  border-radius: @radius;
+  -webkit-border-radius: @radius;
+  -moz-border-radius: @radius;
+}
+
+.shadow (@size: 25px) {
+  -webkit-box-shadow:  1px 1px @size 0px rgba(0, 0, 0, 0.25);
+  box-shadow:  1px 1px @size 0px rgba(0, 0, 0, 0.25);
+}
+
+.elastic {
+  position: relative;
+  padding-bottom: 56.25%;
+  padding-top: 30px;
+  height: 0;
+  overflow: hidden;
+  iframe,
+  object,
+  embed {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+body {
+  position: relative;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  background-color: #eee;
+  background-image: url(http://subtlepatterns.com/patterns/grunge_wall.png);
+  background-attachment:fixed;
+  background-position: top center;
+}
+
+#page {
+  background-image: url(../img/platform-bg-lines.png);
+  background-repeat: repeat-y;
+  background-attachment: fixed;
+  background-position: top center;
+}
+
+#videos {
+  div.video {
+    margin-top: 18px;
+    margin-bottom: 18px;
+    h2 {
+      font-weight: 300;
+    }
+    img {
+      .shadow;
+      .rounded-corners;
+    }
+    .info {
+      .shadow;
+      .rounded-corners;
+      margin-bottom: 18px;
+      padding: 9px 18px 18px 18px;
+      background-color: #fff;
+      text-align: right;
+    }
+    .embed {
+      .shadow;
+      .elastic;
+    }
+  }
+}
+
+#fade-top {
+  position: fixed;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #22252b), color-stop(100%, rgba(34, 37, 43, 0)));
+  background-image: -webkit-linear-gradient(#22252b, rgba(34, 37, 43, 0));
+  background-image: -moz-linear-gradient(#22252b, rgba(34, 37, 43, 0));
+  background-image: -o-linear-gradient(#22252b, rgba(34, 37, 43, 0));
+  background-image: linear-gradient(#22252b, rgba(34, 37, 43, 0));
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 250px;
+  z-index: 500;
+  opacity: 0.35;
+}
+
+#fade-bottom {
+  position: fixed;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(34, 37, 43, 0)), color-stop(100%, #22252b));
+  background-image: -webkit-linear-gradient(rgba(34, 37, 43, 0), #22252b);
+  background-image: -moz-linear-gradient(rgba(34, 37, 43, 0), #22252b);
+  background-image: -o-linear-gradient(rgba(34, 37, 43, 0), #22252b);
+  background-image: linear-gradient(rgba(34, 37, 43, 0), #22252b);
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 250px;
+  z-index: 500;
+  opacity: 0.35;
+}
